@@ -41,6 +41,6 @@ public class Card implements ICard {
 
     @Override
     public String getPinCode() {
-        return "";
+        return pinCode;
     }
 }
