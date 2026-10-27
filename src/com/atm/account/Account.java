@@ -26,13 +26,15 @@ public class Account implements IAccount {
     }
 
     @Override
-    public void deposit(double amount) {
+    public boolean deposit(double amount) {
 
         if (amount > 0) {
             balance += amount;
             System.out.println("Success " + amount + " got added to your balance");
+            return true;
         } else {
             System.out.println("You cannot deposit zero or less");
+            return false;
         }
     }
 
