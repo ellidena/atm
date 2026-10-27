@@ -12,6 +12,7 @@ public class TransactionProcessor implements ITransactionProcessor {
     public TransactionProcessor(IAccount account)  {// maybe more?
             this.account = account;
         }
+
         @Override
         public boolean processTransaction(IAccount account, double amount) {
             if (account != null) {
@@ -21,7 +22,6 @@ public class TransactionProcessor implements ITransactionProcessor {
                 }
                 if (account.deposit(amount)) {
                     System.out.println(amount + " deposited to account: " + account);
-                    return true;
                 }
             }
             System.out.println("No account provided. Exiting transaction procession.");
