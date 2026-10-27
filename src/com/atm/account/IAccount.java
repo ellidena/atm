@@ -6,6 +6,6 @@ public interface IAccount {
 
     ICustomer getCustomer();
     double getBalance();
-    void deposit(double amount);
+    boolean deposit(double amount);
     boolean withdraw(double amount);
 }

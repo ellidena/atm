@@ -3,7 +3,8 @@ package com.atm.transaction;
 import com.atm.account.IAccount;
 
 /**
- * Processes transactions
+ * Processes transactions by taking an account and
+ * calling either withdraw or deposit
  */
 public class TransactionProcessor implements ITransactionProcessor {
     private IAccount account;
@@ -11,23 +12,19 @@ public class TransactionProcessor implements ITransactionProcessor {
     public TransactionProcessor(IAccount account)  {// maybe more?
             this.account = account;
         }
-
         @Override
-        public void processTransaction(IAccount account, double amount) {
+        public boolean processTransaction(IAccount account, double amount) {
             if (account != null) {
-                if (account.transactionType.WITHDRAWAL) {
-                    account.withdraw(amount);
+                if (account.withdraw(amount)) {
                     System.out.println(amount + " withdrawn from account: " + account);
                 }
-                if (account.transactionType.DEPOSIT) {
-                    account.deposit(amount);
+                if (account.deposit(amount)) {
                     System.out.println(amount + " deposited to account: " + account);
+                    return true;
                 }
             }
-            else {
-                System.out.println("No account provided. Exiting transaction procession.");
-            }
-
+            System.out.println("No account provided. Exiting transaction procession.");
+            return false; // No account provided
         }
 
     // Getters and Setters

@@ -3,8 +3,8 @@ package com.atm.transaction;
 import com.atm.account.IAccount;
 
 /**
- * Interface:
+ * Takes an account and an amount
  */
 public interface ITransactionProcessor {
-    void processTransaction(IAccount account, double amount);
+    boolean processTransaction(IAccount account, double amount);
 }
