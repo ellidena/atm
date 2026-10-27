@@ -17,6 +17,7 @@ public class TransactionProcessor implements ITransactionProcessor {
             if (account != null) {
                 if (account.withdraw(amount)) {
                     System.out.println(amount + " withdrawn from account: " + account);
+                    return true;
                 }
                 if (account.deposit(amount)) {
                     System.out.println(amount + " deposited to account: " + account);
