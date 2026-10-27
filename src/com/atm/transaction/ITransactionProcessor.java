@@ -1,5 +1,7 @@
 package com.atm.transaction;
 
+import com.atm.account.IAccount;
+
 /**
  * Interface:
  */
