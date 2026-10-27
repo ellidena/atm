@@ -14,17 +14,17 @@ public class TransactionProcessor implements ITransactionProcessor {
             if (account != null) {
 
                 if (account.transactionType.WITHDRAWAL) {
-                    account.withdrawal(amount)
-                    System.out.println(amount + " wihtrawed from account: " + account);
+                    account.withdrawal(amount);
+                    System.out.println(amount + " withdrawn from account: " + account);
                 }
 
                 if (account.transactionType.DEPOSIT) {
-                    account.deposit(amount)
+                    account.deposit(amount);
                     System.out.println(amount + " deposited to account: " + account);
                 }
             }
             else {
-                System.out.println("No account provided. Exiting transaction procession.")
+                System.out.println("No account provided. Exiting transaction procession.");
             }
 
         }
