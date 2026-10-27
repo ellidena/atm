@@ -1,5 +1,5 @@
 package com.atm.security;
 
 public interface ISecurity {
-    boolean authentication (String correctPin, String pin);
+    boolean authenticate (String correctPin, String pin);
 }
